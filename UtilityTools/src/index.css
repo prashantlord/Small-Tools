@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import "tailwindcss";
+
+html,
+body {
+  @apply scroll-smooth;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: white;
+    --color: black;
+    --primary-color: #dc2fff;
+    --primary-color-dark: #951fad;
+
+    --primary-text-color: var(--color);
+    --border: rgb(187, 187, 187);
+  }
+  .dark {
+    --background: #161616;
+    --color: #ffffff;
+    --primary-color: #e99ef8;
+    --primary-color-dark: #da3afa;
+
+    --primary-text-color: var(--color);
+    --border: rgb(77, 77, 77);
+  }
+}
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--color);
+}
+
+@utility iteam-hover {
+  @apply transition-colors duration-300;
+  color: var(--primary-color);
+}
+
+@utility text-color {
+  color: var(--primary-color);
+}
+
+@utility catogery {
+  @apply flex gap-3 hover:iteam-hover my-5 cursor-pointer;
+}
+@utility navBorder {
+  @apply border-b-1;
+  border-bottom: solid var(--border);
+}
+
+@utility md-hidden {
+  @media (width <= 48rem) {
+    display: none;
+  }
+}
+
+@utility no-focus {
+  @apply border-none outline-none;
+}
+
+@utility button {
+  @apply w-15 h-15 text-2xl font-semibold bg-gray-500  cursor-pointer hover:bg-gray-600 transition-colors duration-300 rounded-md;
+}
+@utility action-button {
+  @apply bg-orange-500 text-white text-2xl font-bold w-15 h-15 cursor-pointer hover:bg-orange-400 duration-300 rounded-md;
+}
