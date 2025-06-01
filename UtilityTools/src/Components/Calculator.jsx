@@ -19,16 +19,15 @@ function Calculator({ name, info, setPageMain }) {
 
   return (
     <div>
-      <div>
-        <div
-          className="flex w-fit  cursor-pointer hover:iteam-hover "
-          onClick={() => setPageMain("main")}
-        >
-          <ArrowLeft /> Go Back{" "}
-        </div>
-        <h1 className=" text-2xl md:text-3xl font-semibold">{name}</h1>
-        <p className="text-sm">{info}</p>
+      <div
+        className="flex w-fit  cursor-pointer hover:iteam-hover "
+        onClick={() => setPageMain("main")}
+      >
+        <ArrowLeft /> Go Back{" "}
       </div>
+      <h1 className=" text-2xl md:text-3xl font-semibold">{name}</h1>
+      <p className="text-sm">{info}</p>
+
       <div className="mt-10 w-fit   ">
         <div className="flex flex-col gap-5 items-center ">
           <div className=" w-70 h-20 overflow-hidden rounded-md">

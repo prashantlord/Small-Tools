@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import Calculator from "./Calculator";
+import { Currency } from "lucide-react";
+import CurrencyConv from "./CurrencyConv";
 
 function MainSection({ tool, search, elem }) {
   const [page, setPage] = useState(elem);
@@ -12,6 +14,12 @@ function MainSection({ tool, search, elem }) {
       description: "Perform basic and advanced calculations",
       url: "/src/assets/Tools/calculator.svg",
       category: "calculators",
+    },
+    {
+      name: "Currency Converter",
+      description: "Convert currencies with real-time exchange rates",
+      url: "/src/assets/Tools/currencyconverter.svg",
+      category: "Currency Converter",
     },
   ];
 
@@ -32,13 +40,13 @@ function MainSection({ tool, search, elem }) {
               Explore a variety of tools to boost your productivity.
             </p>
           </div>
-          <div className="">
+          <div className=" flex flex-wrap gap-5 ">
             {tools.map((item, key) =>
               tool.toLowerCase() === item.category ||
               tool.toLowerCase() === "all tools" ? (
                 <div
                   key={key}
-                  className=" w-30 md:w-40 cursor-pointer transition-colors duration-300 ease-in"
+                  className=" w-20 sm:w-30 md:w-30 xl:w-50 cursor-pointer transition-colors duration-300 ease-in  "
                   onClick={() => {
                     setPage(item.name.toLowerCase());
                     setName(item.name);
@@ -49,14 +57,14 @@ function MainSection({ tool, search, elem }) {
                     <img
                       src={item.url}
                       alt={item.category}
-                      className="w-full rounded-xl border-1 md:border-none hover:scale-[1.1] transition-all duration-300"
+                      className="w-full rounded-xl   md:border-none hover:scale-[1.1] transition-all duration-300"
                     />
                   </div>
                   <div className="mt-2">
-                    <h1 className="text-xl md:text-2xl font-semibold ">
+                    <h1 className="text-xs text-center sm:text-sm md:text-xl xl:text-left font-semibold ">
                       {item.name}
                     </h1>
-                    <p className=" text-[0.8rem] md:text-sm">
+                    <p className=" text-[0.8rem] text-sm hidden xl:inline">
                       {item.description}
                     </p>
                   </div>
@@ -73,6 +81,13 @@ function MainSection({ tool, search, elem }) {
       return (
         <div className=" relative mx-10 top-10 md:ml-65">
           <Calculator name={name} info={info} setPageMain={setPage} />
+        </div>
+      );
+      break;
+    case "currency converter":
+      return (
+        <div className=" relative mx-10 top-10 md:ml-65">
+          <CurrencyConv name={name} info={info} setPageMain={setPage} />
         </div>
       );
       break;
