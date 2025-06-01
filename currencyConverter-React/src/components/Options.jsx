@@ -56,56 +56,62 @@ function CurrencyUI() {
         Currency Converter
       </h1>
       <div
-        className="grid grid-cols-1 gap-3  my-10 md:grid-cols-3 
+        className="grid grid-cols-1 gap-3  my-5 md:grid-cols-3 
        "
       >
-        {currencies ? (
-          <select
-            name="from"
-            id="from"
-            onChange={(e) => {
-              setFrom(e.target.value);
-            }}
-            value={from}
-            className=" border-2 border-gray-400 p-2 w-full rounded-md cursor-pointer"
-          >
-            {currencies.map((item, key) => (
-              <option value={item} key={key}>
-                {item}
-              </option>
-            ))}
-          </select>
-        ) : (
-          ""
-        )}
-
-        <div className="w-full flex item-center justify-center">
+        <div>
+          <h2 className="font-semibold ">From </h2>
+          {currencies ? (
+            <select
+              name="from"
+              id="from"
+              onChange={(e) => {
+                setFrom(e.target.value);
+              }}
+              value={from}
+              className=" border-2 border-gray-400 p-2 w-full rounded-md cursor-pointer"
+            >
+              {currencies.map((item, key) => (
+                <option value={item} key={key}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="w-full flex items-center justify-center ">
           <ArrowLeftRight
             className=" bg-red-500 text-white w-10 h-10 p-2 rounded-full cursor-pointer hover:bg-red-700 transition-colors duration-300   "
             onClick={swapCurrencies}
           />
         </div>
 
-        {currencies ? (
-          <select
-            name="to"
-            id="to"
-            onChange={(e) => {
-              setTo(e.target.value);
-            }}
-            value={to}
-            className=" border-2 border-gray-400 p-2 w-full md:w-40 rounded-md cursor-pointer"
-          >
-            {currencies.map((item, key) => (
-              <option value={item} key={key}>
-                {item}
-              </option>
-            ))}
-          </select>
-        ) : (
-          ""
-        )}
+        <div>
+          <h2 className="font-semibold  ">To</h2>
+          {currencies ? (
+            <select
+              name="to"
+              id="to"
+              onChange={(e) => {
+                setTo(e.target.value);
+              }}
+              value={to}
+              className=" border-2 border-gray-400 p-2 w-full md:w-40 rounded-md cursor-pointer"
+            >
+              {currencies.map((item, key) => (
+                <option value={item} key={key}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
+      <h2 className="font-semibold">Amount</h2>
       <input
         type="number"
         className="border-2 border-gray-400 p-2 w-full  rounded-md font-semibold focus:outline-none mb-2 "
