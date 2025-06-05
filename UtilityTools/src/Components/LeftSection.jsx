@@ -6,7 +6,6 @@ import {
   Hammer,
   Menu,
   Table2,
-  Utensils,
 } from "lucide-react";
 import { useState } from "react";
 import MainSection from "./MainSection";
@@ -20,27 +19,30 @@ export default function () {
       <aside className="hidden md:inline fixed  top-25 left-8  w-50 h-dvh ">
         <h1 className="text-xl font-semibold">Categories</h1>
         <div className="pl-2 my-5">
-          <ul>
+          
             <button
               className=" catogery "
               onClick={() => setTools("All Tools")}
             >
               <Table2 className="inline" /> ALL Tools
             </button>
-            <li className=" catogery " onClick={() => setTools("Calculators")}>
+            <button
+              className=" catogery "
+              onClick={() => setTools("Calculators")}
+            >
               <Calculator className="inline" /> Calculators
-            </li>
-            <li className="catogery" onClick={() => setTools("Convertors")}>
+            </button>
+            <button className="catogery" onClick={() => setTools("Convertors")}>
               <ArrowLeftRight className="inline" /> Convertors
-            </li>
-            <li className="catogery" onClick={() => setTools("Timers")}>
+            </button>
+            <button className="catogery" onClick={() => setTools("Timers")}>
               <Clock className="inline" /> Timers
-            </li>
-            <li className=" catogery" onClick={() => setTools("Utilities")}>
+            </button>
+            <button className=" catogery" onClick={() => setTools("Utilities")}>
               <Hammer className=" inline" /> Utilities
-            </li>
-          </ul>
-        </div>
+            </button>
+          </div>
+       
       </aside>
       <MainSection tool={tool} />
     </>

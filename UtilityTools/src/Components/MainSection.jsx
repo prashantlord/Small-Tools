@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 
 import Calculator from "./Calculator";
-import { Currency } from "lucide-react";
+
 import CurrencyConv from "./CurrencyConv";
 
 function MainSection({ tool, search, elem }) {
   const [page, setPage] = useState(elem);
   const [name, setName] = useState("");
   const [info, setInfo] = useState("");
+  const [renderC, setRenderC] = useState(false);
   const tools = [
     {
       name: "Calculator",
@@ -19,7 +20,7 @@ function MainSection({ tool, search, elem }) {
       name: "Currency Converter",
       description: "Convert currencies with real-time exchange rates",
       url: "/src/assets/Tools/currencyconverter.svg",
-      category: "Currency Converter",
+      category: "convertors",
     },
   ];
 
@@ -51,6 +52,7 @@ function MainSection({ tool, search, elem }) {
                     setPage(item.name.toLowerCase());
                     setName(item.name);
                     setInfo(item.description);
+                    setRenderC("renderCurencyConv");
                   }}
                 >
                   <div className=" overflow-hidden rounded-xl">

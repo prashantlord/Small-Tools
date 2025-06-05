@@ -4,6 +4,7 @@ import MainSection from "./MainSection";
 
 function Calculator({ name, info, setPageMain }) {
   const [input, setInput] = useState("");
+
   function handleCalc() {
     try {
       let temp = eval(input.replace(/^0+/, ""));
@@ -30,7 +31,7 @@ function Calculator({ name, info, setPageMain }) {
 
       <div className="mt-10 w-fit   ">
         <div className="flex flex-col gap-5 items-center ">
-          <div className=" w-70 h-20 overflow-hidden rounded-md">
+          <div class Name=" w-70 h-20 overflow-hidden rounded-md">
             <input
               type="text"
               className="bg-black w-full h-full focus:no-focus py-5 text-white text-xl pl-2 "

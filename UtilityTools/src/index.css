@@ -61,7 +61,7 @@ html {
 }
 
 @utility no-focus {
-  @apply border-none outline-none;
+  @apply outline-none;
 }
 
 @utility button {

@@ -1,5 +1,5 @@
 import LeftSection from "../Components/LeftSection";
-import MainSection from "../Components/MainSection";
+
 import NavBar from "../Components/NavBar";
 import ThemeToggle from "../Components/ThemeToggle";
 
